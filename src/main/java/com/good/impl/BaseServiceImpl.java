@@ -1,5 +1,7 @@
 package com.good.impl;
 
+import com.good.common.StaticName;
+
 /**
  * BaseServiceImpl
  *
@@ -7,5 +9,5 @@ package com.good.impl;
  * @Author: tretert
  * @Time:1
  */
-public class BaseServiceImpl {
+public class BaseServiceImpl extends StaticName {
 }
