@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.good.mapper.LoginMapper">
+    <select id="getById" resultType="User">
+        select * from ${tableName} where id = #{id}
+    </select>
+
+    <select id="getUserByName" resultType="User">
+        select * from ${tableName} where username = #{username}
+    </select>
+
+    <select id="getAll"></select>
+
+    <delete id="delete"></delete>
+
+    <update id="update"></update>
+
+    <insert id="save"></insert>
+</mapper>
