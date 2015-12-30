@@ -1,8 +1,11 @@
 package com.good.controller;
 
 /**
- * Created by Administrator
- * Date:2015/12/29
+ * BaseController
+ *
+ * @Description: uuuuuuuuuuuuuuuuu
+ * @Author: tretert
+ * @Time:1
  */
-public class BaseController{
+public class BaseController {
 }
