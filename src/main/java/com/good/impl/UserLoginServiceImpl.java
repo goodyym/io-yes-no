@@ -1,9 +1,9 @@
 package com.good.impl;
 
 
-import com.good.mapper.LoginMapper;
+import com.good.mapper.UserLoginMapper;
 import com.good.model.User;
-import com.good.service.LoginService1;
+import com.good.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +15,12 @@ import org.springframework.stereotype.Service;
  * @Time:1
  */
 @Service
-public class LoginServiceImpl implements LoginService1 {
+public class UserLoginServiceImpl implements UserLoginService {
 
     @Autowired
-    LoginMapper loginMapper;
+    UserLoginMapper userLoginMapper;
 
     public User getUserByName(String username){
-        return loginMapper.getUserByName(User.tableName,username);
+        return userLoginMapper.getUserByName(User.tableName,username);
     }
 }
