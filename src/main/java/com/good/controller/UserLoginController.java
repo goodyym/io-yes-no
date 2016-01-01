@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/login")
-public class LoginController {
+public class UserLoginController {
 
     @RequestMapping("/userLogin")
     public String userLogin(){

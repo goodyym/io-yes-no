@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Param;
  * @Author: tretert
  * @Time:1
  */
-public interface LoginMapper extends StaticName {
+public interface UserLoginMapper extends StaticName {
 
     User getUserByName(@Param(MAPPER_TABLE_NAME)String tableName,@Param("username")String username);
 }
