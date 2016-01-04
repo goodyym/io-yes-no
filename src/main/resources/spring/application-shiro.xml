@@ -18,7 +18,8 @@ http://www.springframework.org/schema/context/spring-context.xsd">
         <property name="filterChainDefinitions">
             <value>
                 /login/userLogin = authc
-                /** = authc
+                /login/welcome = authc
+                <!--/** = authc-->
             </value>
         </property>
     </bean>

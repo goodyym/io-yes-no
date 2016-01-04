@@ -1,7 +1,7 @@
 package com.good.mapper;
 
 import com.good.common.StaticName;
-import com.good.model.User;
+import com.good.model.GoodUser;
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -13,5 +13,5 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface UserLoginMapper extends StaticName {
 
-    User getUserByName(@Param(MAPPER_TABLE_NAME)String tableName,@Param("username")String username);
+    GoodUser getUserByName(@Param(MAPPER_TABLE_NAME)String tableName,@Param("username")String username);
 }
