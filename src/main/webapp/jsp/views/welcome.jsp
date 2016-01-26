@@ -6,18 +6,8 @@
 </head>
 <body>
 
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 
-<shiro:hasPermission name="/test/add">
-sdjfsojfiweoj
-</shiro:hasPermission>
-
-<shiro:hasPermission name="/good/update">
-hhhhhhhhhhhhhhhhhhhhhhhhhhh
-</shiro:hasPermission>
-
-<shiro:hasPermission name="nihao">
-    aaaaaaaaaaaaaaaaaaaaaaaaa
-</shiro:hasPermission>
 
 
 

@@ -6,6 +6,7 @@ import com.good.model.GoodUser;
 import com.good.service.GoodPermissionService;
 import com.good.service.GoodRoleService;
 import com.good.service.UserLoginService;
+import com.good.shiro.CustomCredentialsMatcher;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -14,6 +15,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
@@ -29,11 +31,11 @@ public class myrealm extends AuthorizingRealm{
     @Autowired
     UserLoginService userLoginService;
 
-    @Autowired
+    /*@Autowired
     GoodRoleService goodRoleService;
 
     @Autowired
-    GoodPermissionService goodPermissionService;
+    GoodPermissionService goodPermissionService;*/
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
@@ -44,7 +46,7 @@ public class myrealm extends AuthorizingRealm{
         List<GoodPermission> listPermission = null;
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 
-        if(user != null){
+        /*if(user != null){
             listRole = goodRoleService.getRoleByUser(user.getId());
         }
 
@@ -57,16 +59,15 @@ public class myrealm extends AuthorizingRealm{
                     }
                 }
             }
-        }
+        }*/
         return info;
     }
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
 
-//        String tokenUserName = authenticationToken.getPrincipal().toString();
-
         UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken)authenticationToken;
+
         String tokenUserName = usernamePasswordToken.getUsername();
         String password = "";
         if(tokenUserName!=null){
@@ -75,4 +76,13 @@ public class myrealm extends AuthorizingRealm{
 
         return new SimpleAuthenticationInfo(tokenUserName, password,getName());
     }
+
+
+    //类收到DI容器初始化的时候，执行此方法，做一些初始化操作
+    @PostConstruct
+    public void initCredentialsMacther(){
+        setCredentialsMatcher(new CustomCredentialsMatcher());
+    }
+
+
 }
