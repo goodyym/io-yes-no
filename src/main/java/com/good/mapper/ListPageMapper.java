@@ -18,7 +18,7 @@ import java.util.Map;
  *
  */
 public interface ListPageMapper {
-    int pageCount(@Param("params") Map<String, Object> params);
+    int pageCount(@Param("params") Map<String, Object> params,@Param("tableName") String tableName);
 
     List<TestPageModel> getListPage(@Param("tableName") String tableName , @Param("params") Map<String, Object> params,RowBounds rowBounds);
 }

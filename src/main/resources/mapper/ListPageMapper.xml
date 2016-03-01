@@ -5,11 +5,11 @@
 <mapper namespace="com.good.mapper.ListPageMapper">
 
     <select id="pageCount" resultType="int">
-        select cout(*) from #{tableName}
+        select count(*) from tb_test_page
     </select>
 
     <select id="getListPage" resultType="TestPageModel">
-        select * FROM #{tableName}
+        select * FROM tb_test_page
     </select>
 
 </mapper>

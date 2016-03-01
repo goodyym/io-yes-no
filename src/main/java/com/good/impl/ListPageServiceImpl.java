@@ -28,7 +28,7 @@ public class ListPageServiceImpl implements ListPageService{
 
     public Page<TestPageModel> getListPage(Map<String, Object> params, Page<TestPageModel> page) {
 
-        int pageCount = listPageMapper.pageCount(params);
+        int pageCount = listPageMapper.pageCount(params,TestPageModel.tableName);
 
         RowBounds rowbounds = new RowBounds(page.getOffset(),page.getLimit());
         List<TestPageModel> listPage = listPageMapper.getListPage(TestPageModel.tableName,params,rowbounds);
