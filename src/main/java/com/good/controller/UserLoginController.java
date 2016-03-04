@@ -1,5 +1,6 @@
 package com.good.controller;
 
+import com.good.model.GoodUser;
 import com.good.model.Page;
 import com.good.model.TestPageModel;
 import com.good.service.ListPageService;
@@ -10,12 +11,14 @@ import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.validation.support.BindingAwareModelMap;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,7 +47,7 @@ public class UserLoginController {
     }
 
     @RequestMapping("/welcome")
-    public String welcome(HttpServletRequest request,Model model){
+    public String welcome(HttpServletRequest request,Map map){
        /* HttpSession ss2 = request.getSession();
         ss2.setAttribute("yy","mmmValue111");
         System.out.println(ss2.getId()+"======welcome====sessionId");
@@ -58,12 +61,12 @@ public class UserLoginController {
         setPageNo(pageNoInt);
         Map<String,Object> params = new HashMap<String, Object>();
         page = listPageService.getListPage(params,page);
-        model.addAttribute("page",page);
+        map.put("page", page);
 
         return "welcome";
     }
 
-    @RequestMapping("/welcome2")
+    @RequestMapping(value = "/welcome2")
     public String welcome2(HttpServletRequest request){
 
     return "welcome2";
@@ -81,10 +84,18 @@ public class UserLoginController {
         setPageNo(pageNoInt);
         Map<String,Object> params = new HashMap<String, Object>();
         page = listPageService.getListPage(params,page);
-
-        Map<String,Object> map = new HashMap<String,Object>();
+        Map<String,Object> map = new HashMap<String, Object>();
         map.put("page",page);
         return map;
+
+
+    }
+
+    @RequestMapping("/testVoid")
+    public void testVoid(HttpServletResponse response,PrintWriter pw){
+
+        String str = "{\"aa\":\"bb\"}";
+        pw.write("sfdsfwer21");
     }
 
 

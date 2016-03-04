@@ -16,7 +16,8 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 <context:component-scan base-package="com.good.controller" />
 <mvc:annotation-driven/>
 
-<mvc:resources mapping="/jsp/**" location="/jsp/"></mvc:resources>
+
+    <mvc:resources mapping="/jsp/**" location="/jsp/"></mvc:resources>
 <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
 
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -24,5 +25,6 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     <property name="prefix" value="/jsp/views/"/>
     <property name="suffix" value=".jsp"/>
 </bean>
+
 
 </beans>

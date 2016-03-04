@@ -19,13 +19,16 @@
 <br />
 <form action="/io-yes-no/login/welcome"  method="get" id="formId">
     <input id="pageSizeId" type="hidden" name="pageNo">
+    <input type="text" name="username" />
+    <input type="text" name="password" />
+
 </form>
 
 <c:forEach begin="1" end="${page.maxPage}" step="1" varStatus="index">
     <a href="javascript:void(0);" onclick="submitOk('${index.index}')">${index.index}</a>&nbsp;&nbsp;
 </c:forEach>
 
-
+${aa}
 </body>
 
 </html>

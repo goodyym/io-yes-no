@@ -4,7 +4,11 @@
 <html>
 <head>
     <title>试验分页</title>
+
+    <link href="${pageContext.request.contextPath}/css/page/pagination.css" />
+
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/page/jquery.pagination.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/listPageAjax.js"></script>
 </head>
 <body>
